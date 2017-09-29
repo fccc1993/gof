@@ -11,6 +11,8 @@ package com.gof.strategy;
  *
  */
 public abstract class Duck {
+	
+	//行为变量被声明为行为 "接口" 类型.
 	FlyBehavior flyBehavior;
 	QuackBehavior quackBehavior;
 	
@@ -23,6 +25,8 @@ public abstract class Duck {
 	public void swim(){
 		System.out.println("All ducks can swim");
 	}
+	
+	//将fly 行为委托给 行为接口 的具体对象
 	public void performFly(){
 		flyBehavior.fly();
 	}

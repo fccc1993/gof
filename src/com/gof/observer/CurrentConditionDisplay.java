@@ -7,6 +7,7 @@ public class CurrentConditionDisplay implements Observer,DisplayElement{
 	
 	public CurrentConditionDisplay(Subject weatherData){
 		this.weatherData = weatherData;
+		//观察者注册主题, 以便在主题数据改变时能够收到更新.
 		weatherData.registerObserver(this);
 	}
 	
@@ -19,17 +20,9 @@ public class CurrentConditionDisplay implements Observer,DisplayElement{
 
 	@Override
 	public void display() {
-		System.out.println("temperature is " + temperature +
-				" F degree, humidity is " +humidity +"% humidity" );
+		System.out.println("Current conditions: " + temperature +
+				" F degree, " +humidity +"% humidity" );
 	}
 	
-	public static void main(String[] args) {
-		WeatherData weatherData = new WeatherData();
-		CurrentConditionDisplay ccd = new CurrentConditionDisplay(weatherData);
-		
-		weatherData.setMeasurement(84.2, 49.4, 50.6);
-		weatherData.setMeasurement(24.4, 75.9, 67.9);
-		weatherData.setMeasurement(78.3, 65.8, 53.0);
-	}
 	
 }

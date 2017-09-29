@@ -5,4 +5,4 @@
  * @author xfc
  *
  */
-package com.gof.observer;
+package com.gof.singleton;
